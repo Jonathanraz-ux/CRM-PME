@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ==========================================================================
+   Thème couleur primaire dynamique (défini depuis les Paramètres)
+   Les variables --crm-primary-* sont mises à jour via JS dans App.tsx
+   quand l'utilisateur change la couleur dans les Paramètres.
+   On surcharge ensuite les classes Tailwind "blue-*" à l'exécution.
+   ========================================================================== */
+:root {
+  --crm-primary: #3b82f6;
+  --crm-primary-hover: #2563eb;
+  --crm-primary-soft: rgba(59, 130, 246, 0.08);
+  --crm-primary-ring: rgba(59, 130, 246, 0.1);
+}
+
+/* ---- Background overrides ---- */
+.bg-blue-600 { background-color: var(--crm-primary) !important; }
+.bg-blue-50 { background-color: var(--crm-primary-soft) !important; }
+.bg-blue-50\/50 { background-color: var(--crm-primary-soft) !important; }
+.bg-blue-50\/20 { background-color: var(--crm-primary-soft) !important; }
+.bg-blue-100 { background-color: var(--crm-primary-soft) !important; }
+
+/* ---- Hover background overrides ---- */
+.hover\:bg-blue-700:hover { background-color: var(--crm-primary-hover) !important; }
+.active\:bg-blue-800:active { background-color: var(--crm-primary-hover) !important; }
+
+/* ---- Text color overrides ---- */
+.text-blue-600 { color: var(--crm-primary) !important; }
+.text-blue-500 { color: var(--crm-primary) !important; }
+.text-blue-700 { color: var(--crm-primary) !important; }
+.text-blue-900 { color: var(--crm-primary) !important; }
+
+/* ---- Border overrides ---- */
+.border-blue-500 { border-color: var(--crm-primary) !important; }
+
+/* ---- Ring overrides ---- */
+.ring-blue-500\/10 { --tw-ring-color: var(--crm-primary-ring) !important; }
+
+/* ---- Shadow overrides ---- */
+.shadow-blue-200 { --tw-shadow-color: var(--crm-primary-ring) !important; }
+.shadow-blue-500\/10 { --tw-shadow-color: var(--crm-primary-ring) !important; }
+
+/* ---- Focus ring overrides ---- */
+.focus\:ring-blue-500\/10:focus { --tw-ring-color: var(--crm-primary-ring) !important; }
+.focus\:border-blue-500:focus { border-color: var(--crm-primary) !important; }
+
+/* ---- Dark mode overrides ---- */
+.dark .dark\:text-blue-400 { color: var(--crm-primary) !important; }
+.dark .dark\:text-blue-300 { color: var(--crm-primary) !important; }
+.dark .dark\:bg-blue-950\/40 { background-color: var(--crm-primary-soft) !important; }
+.dark .dark\:bg-blue-950\/30 { background-color: var(--crm-primary-soft) !important; }
+.dark .dark\:bg-blue-950\/20 { background-color: var(--crm-primary-soft) !important; }
+.dark .dark\:bg-blue-900\/50 { background-color: var(--crm-primary-soft) !important; }
+
+/* ==========================================================================
+   Densité d'affichage (data-density="compact")
+   ========================================================================== */
+[data-density="compact"] table tbody td {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+}
+[data-density="compact"] table thead th {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+[data-density="compact"] .crm-card {
+  padding: 0.875rem !important;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "CRM PME",
+  "description": "Un template premium de CRM pour PME avec gestion des leads, clients, devis, historique visuel et mode sombre.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
