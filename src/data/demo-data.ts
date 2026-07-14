@@ -1,6 +1,6 @@
 import { Lead, Client, Quote, Activity, CompanySettings } from '../types';
 
-export const DEMO_WHATSAPP_NUMBER = '33612345678';
+export const DEMO_WHATSAPP_NUMBER = '261349320184';
 export const DEMO_WHATSAPP_MESSAGE =
   'Bonjour, je viens de tester votre dashboard de démonstration et je souhaite en savoir plus pour mon entreprise.';
 
