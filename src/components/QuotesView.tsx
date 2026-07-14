@@ -36,6 +36,7 @@ interface QuotesViewProps {
   onAddQuote: (quote: Omit<Quote, 'id' | 'quoteNumber' | 'sentAt'>) => void;
   onUpdateQuote: (quote: Quote) => void;
   onDeleteQuote: (id: string) => void;
+  demoMode?: boolean;
 }
 
 export default function QuotesView({
@@ -45,7 +46,8 @@ export default function QuotesView({
   companySiret,
   onAddQuote,
   onUpdateQuote,
-  onDeleteQuote
+  onDeleteQuote,
+  demoMode = false
 }: QuotesViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('ALL');

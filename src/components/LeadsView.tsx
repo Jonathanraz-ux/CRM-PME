@@ -36,6 +36,7 @@ interface LeadsViewProps {
   onDeleteLead: (id: string) => void;
   openAddModalInitially?: boolean;
   onCloseInitialAddModal?: () => void;
+  demoMode?: boolean;
 }
 
 export default function LeadsView({
@@ -45,7 +46,8 @@ export default function LeadsView({
   onUpdateLead,
   onDeleteLead,
   openAddModalInitially = false,
-  onCloseInitialAddModal
+  onCloseInitialAddModal,
+  demoMode = false
 }: LeadsViewProps) {
   // Filters & Search state
   const [searchTerm, setSearchTerm] = useState('');

@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useAuth } from './auth/AuthProvider';
 import LoginScreen from './auth/LoginScreen';
 import { useCrm } from './hooks/useCrm';
@@ -15,6 +16,8 @@ import LeadsView from './components/LeadsView';
 import ClientsView from './components/ClientsView';
 import QuotesView from './components/QuotesView';
 import SettingsView from './components/SettingsView';
+import DemoAppShell from './components/DemoAppShell';
+import { ToastProvider } from './components/DemoToast';
 
 import { Lead, Client, Quote } from './types';
 import { useUiPrefs } from './hooks/useUiPrefs';
@@ -206,7 +209,7 @@ function AppShell() {
   );
 }
 
-export default function App() {
+function AuthenticatedRoutes() {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -222,4 +225,17 @@ export default function App() {
   }
 
   return <AppShell />;
+}
+
+export default function App() {
+  return (
+    <ToastProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/demo" element={<DemoAppShell />} />
+          <Route path="/*" element={<AuthenticatedRoutes />} />
+        </Routes>
+      </BrowserRouter>
+    </ToastProvider>
+  );
 }

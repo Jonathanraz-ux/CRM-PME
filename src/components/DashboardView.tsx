@@ -36,6 +36,7 @@ interface DashboardViewProps {
   activities: Activity[];
   onNavigate: (view: string) => void;
   onAddLead: () => void;
+  demoMode?: boolean;
 }
 
 export default function DashboardView({
@@ -44,7 +45,8 @@ export default function DashboardView({
   quotes,
   activities,
   onNavigate,
-  onAddLead
+  onAddLead,
+  demoMode = false
 }: DashboardViewProps) {
 
   // ---- 1. METRICS CALCULATIONS ----

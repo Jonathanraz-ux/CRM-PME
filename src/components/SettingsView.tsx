@@ -27,11 +27,13 @@ import { useUiPrefs } from '../hooks/useUiPrefs';
 interface SettingsViewProps {
   settings: CompanySettings;
   onUpdateSettings: (settings: CompanySettings) => void;
+  demoMode?: boolean;
 }
 
 export default function SettingsView({
   settings,
-  onUpdateSettings
+  onUpdateSettings,
+  demoMode = false
 }: SettingsViewProps) {
   // Local state form
   const [name, setName] = useState(settings.name);

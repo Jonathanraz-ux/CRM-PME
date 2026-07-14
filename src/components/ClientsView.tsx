@@ -31,13 +31,15 @@ interface ClientsViewProps {
   onAddClient: (client: Omit<Client, 'id' | 'joinedAt'>) => void;
   onUpdateClient: (client: Client) => void;
   onDeleteClient: (id: string) => void;
+  demoMode?: boolean;
 }
 
 export default function ClientsView({
   clients,
   onAddClient,
   onUpdateClient,
-  onDeleteClient
+  onDeleteClient,
+  demoMode = false
 }: ClientsViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [industryFilter, setIndustryFilter] = useState<string>('ALL');

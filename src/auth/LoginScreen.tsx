@@ -4,7 +4,7 @@
  */
 
 import { useState, FormEvent } from 'react';
-import { Mail, Lock, User as UserIcon, LogIn, UserPlus } from 'lucide-react';
+import { Mail, Lock, User as UserIcon, LogIn, UserPlus, Eye } from 'lucide-react';
 import { useAuth } from '../auth/AuthProvider';
 
 export default function LoginScreen() {
@@ -141,6 +141,23 @@ export default function LoginScreen() {
             ? 'Pas encore de compte ? Créez-en un'
             : 'Déjà inscrit ? Connectez-vous'}
         </button>
+
+        <div className="relative my-5">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-200 dark:border-slate-800" />
+          </div>
+          <div className="relative flex justify-center text-[11px]">
+            <span className="bg-white dark:bg-slate-900 px-3 text-gray-400 font-medium">ou</span>
+          </div>
+        </div>
+
+        <a
+          href="/demo"
+          className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30 hover:bg-blue-100 dark:hover:bg-blue-950/50 border border-blue-200 dark:border-blue-900/50 rounded-xl transition-all"
+        >
+          <Eye className="w-4 h-4" />
+          Voir la démo
+        </a>
       </div>
     </div>
   );
